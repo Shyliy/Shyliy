@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态时钟</title>
+</head>
+<body onload="time()">
+<div id="d1"></div>
+<script>
+
+   function time()
+   {
+   	   var time=new Date();
+	   var hours=time.getHours();
+	   var minutes=time.getMinutes();
+	   var s=time.getSeconds();
+	   var biao=hours+"点"+minutes+"分"+s+"秒";
+
+	   var d1=document.getElementById("d1");
+   	   d1.innerHTML=biao;
+   	   setTimeout("time()",1000);
+   }
+</script>
+</body>
+</html>

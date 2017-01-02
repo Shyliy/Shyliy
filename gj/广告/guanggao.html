@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告</title>
+	<style>
+	body{
+		padding: 0;
+		margin:0;
+	}
+      #d1{
+      	width:50px;
+      	height:50px;
+      	border:1px solid;
+      	position:absolute;
+      }
+	</style>
+	<script src="jquery-3.1.1.js"></script>
+</head>
+<body>
+	<script>
+       $(function(){
+         var x=50;
+         var y=50;
+         var heng=true;
+         var shu=true;
+         setInterval(function(){
+            var zuo=0;
+            var shang=0;
+            var xia=$(window).height()-50;
+            var you=$(window).width()-50; 
+            $("#d1").css({"left":x,"top":y});
+            if(heng==true)
+            {
+            	x=x+1;
+            }
+            else{
+            	x=x-1;
+            }
+            if(shu==true)
+            {
+            	y=y+1;
+            }
+            else{
+            	y=y-1;
+            }
+            if(x<zuo)
+            {
+            	heng=true;
+            }
+            if(x>you)
+            {
+            	heng=false;
+            }
+            if(y>xia)
+            {
+            	shu=false;
+            }
+            if(y<shang)
+            {
+            	shu=true;
+            }
+
+         });
+       });
+
+	</script>
+	<div id="d1"></div>
+</body>
+</html>
